@@ -1,0 +1,180 @@
+
+:root {
+    --primary: #1e3a5f;
+    --secondary: #3498db;
+    --background: #f4f6f8;
+    --text: #333333;
+    --font: Arial, sans-serif;
+    --heading-size: 32px;
+    --body-size: 16px;
+    --spacing: 20px;
+    --radius: 8px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font);
+    font-size: var(--body-size);
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: var(--heading-size);
+}
+
+h2 {
+    font-size: 24px;
+    color: var(--primary);
+}
+
+h3 {
+    font-size: 20px;
+}
+
+/* Header */
+
+.site-header {
+    background: var(--primary);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 25px 40px;
+}
+
+.brand h1 {
+    margin: 0;
+}
+
+.brand p {
+    margin: 5px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Main content */
+
+main {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    padding: var(--spacing);
+}
+
+section {
+    background: white;
+    padding: var(--spacing);
+    margin-bottom: var(--spacing);
+    border-radius: var(--radius);
+}
+
+/* Advanced CSS Grid */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.project-grid article {
+    min-width: 0;
+    background: var(--background);
+    padding: 20px;
+    border-left: 4px solid var(--secondary);
+    border-radius: var(--radius);
+    overflow-wrap: break-word;
+}
+
+.project-grid .featured {
+    grid-column: span 2;
+    background: #dceaf7;
+}
+
+/* Footer */
+
+.site-footer {
+    background: var(--primary);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px 40px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Tablet responsive layout */
+
+@media (max-width: 900px) {
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile responsive layout */
+
+@media (max-width: 600px) {
+    .project-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .project-grid .featured {
+        grid-column: span 1;
+    }
+
+    .site-header,
+    .site-footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    main {
+        padding: 12px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+}
