@@ -1,0 +1,58 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f5f2e9;
+    color: #222;
+    font-family: Georgia, serif;
+}
+
+header {
+    text-align: center;
+    padding: 30px;
+    border-bottom: 4px double black;
+}
+
+header h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.newspaper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 30px;
+}
+
+article {
+    padding: 20px;
+    border: 1px solid #aaa;
+    background: white;
+}
+
+article h2 {
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+}
+
+article p {
+    line-height: 1.8;
+    text-align: justify;
+}
+
+footer {
+    text-align: center;
+    background: #222;
+    color: white;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .newspaper {
+        grid-template-columns: 1fr;
+    }
+}
